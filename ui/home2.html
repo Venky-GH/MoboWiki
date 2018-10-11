@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Welcome</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style>
+  .le{
+    margin-top: 10%;
+  }
+  .ce{
+    text-align: center;
+  }
+  .ip
+  {
+    margin-top: 8%;
+    max-width: 400px;
+    margin-left: 2.5%;
+  }
+  .pe{
+    margin-top: 2%;
+  }
+  .b{
+    font-weight: 500;
+  }
+  .bo{
+    font-weight: 600;
+  }
+  .s{
+    font-size: 115%;
+  }
+  .si{
+    font-size: 118%;
+  }
+  .siz{
+    font-size: 123%;
+  }
+  .invisible{
+    opacity: 0;
+  }
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+
+      </div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav">
+          <li class="siz"><a href="#"><span class="glyphicon glyphicon-phone"></span> MoboWiki</a></li>
+          <li class="siz"><a href="#"><span class="glyphicon glyphicon-home"></span> Home</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li class="li siz"><a href="#" data-toggle="modal" data-target="#wishlist"><span class="glyphicon glyphicon-heart"></span> Wishlist</a></li>
+          <li><button class="btn btn-danger ip si" id="Lo"><span class="glyphicon glyphicon-log-out"></span> Logout </button></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div id="alogin" class="op">
+  </div>
+  <div class="jumbotron container">
+    <br>
+    <div class="ce"><h1>Smartphone Manufacturers<h1></div>
+    <hr>
+    <br>
+    <div class="rows">
+      <div class="col-sm-6 col-md-4">
+        <a href="/ui/phone_huawei.html"><div class="thumbnail">
+          <img src="/ui/huawei.jpg" alt="Huawei">
+          <div class="caption">
+            <h3 class="ce">HUAWEI</h3>
+          </div>
+        </div></a>
+      </div>
+      <div class="col-sm-6 col-md-4">
+        <a href="/ui/phone_xiaomi.html"><div class="thumbnail">
+          <img src="/ui/xiaomi-2.jpg" alt="Xiaomi">
+          <div class="caption">
+            <h3 class="ce">XIAOMI</h3>
+          </div>
+        </div></a>
+      </div>
+      <div class="col-sm-6 col-md-4">
+        <a href="/ui/phone_moto.html"><div class="thumbnail">
+          <img src="/ui/moto.png" alt="Lenovo">
+          <div class="caption">
+            <h3 class="ce">MOTOROLA</h3>
+          </div>
+        </div></a>
+      </div>
+      <div class="col-sm-6 col-md-4">
+        <a href="/ui/phone_lenovo.html"><div class="thumbnail">
+          <img src="/ui/lenovo.jpg" alt="Lenovo">
+          <div class="caption">
+            <h3 class="ce">LENOVO</h3>
+          </div>
+        </div></a>
+      </div>
+      <div class="col-sm-6 col-md-4">
+        <a href="/ui/phone_sony.html"><div class="thumbnail">
+          <img src="/ui/sony.jpg" alt="Sony">
+          <div class="caption">
+            <h3 class="ce">SONY</h3>
+          </div>
+        </div></a>
+      </div>
+      <div class="col-sm-6 col-md-4">
+        <a href="/ui/phone_oppo.html"><div class="thumbnail">
+          <img src="/ui/oppo.jpg" alt="Oppo">
+          <div class="caption">
+            <h3 class="ce">OPPO</h3>
+          </div>
+        </div></a>
+      </div>
+    </div>
+  </div>
+  <nav class="ce" aria-label="Page navigation">
+    <ul class="pagination">
+      <li>
+        <a href="/welcome" aria-label="Previous">
+          <span aria-hidden="true">&laquo;</span>
+        </a>
+      </li>
+      <li><a href="/ui/home.html">1</a></li>
+      <li class="active"><a href="/ui/home2.html">2</a></li>
+      <li><a href="#">3</a></li>
+      <li><a href="#">4</a></li>
+      <li><a href="#">5</a></li>
+      <li class="disabled">
+        <a href="#" aria-label="Next">
+          <span aria-hidden="true">&raquo;</span>
+        </a>
+      </li>
+    </ul>
+</nav>
+
+  <div id="wishlist" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Modal Header</h4>
+        </div>
+        <div class="modal-body">
+          <p>Some text in the modal.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="invisible">
+    <button class="btn btn-primary" id="login_sub"></button>
+    <button class="btn btn-primary" id="register_sub"></button>
+  </div>
+</body>
+<script type="text/javascript" src="/ui/main-1.js"></script>
+</html>
