@@ -10,10 +10,10 @@ var md5 = require('md5');
 var session = require('express-session');
 
 var config = {
-    user: 'postgres',
+    user: 'Mobowiki',
     database: 'Mobowiki',
-    host: '',
-    password: 'abcd@123456'
+    host: 'mobowiki.cvn4jmb3rmul.us-east-1.rds.amazonaws.com',
+    password: 'Mobowiki'
 };
 
 var app = express();
