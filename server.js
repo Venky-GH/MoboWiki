@@ -225,6 +225,6 @@ app.get('/sony/:fileName', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'sony', req.params.fileName));
 });
 
-app.listen(8080, function () {
+app.listen(9090, function () {
   console.log('App listening on port 8080!');
 });
