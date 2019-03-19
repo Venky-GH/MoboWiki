@@ -1,37 +1,6 @@
 -- Adminer 4.6.3 PostgreSQL dump
 
-\connect "Mobowiki";
-
-DROP TABLE IF EXISTS "comment";
-DROP SEQUENCE IF EXISTS comment1_comment_id_seq;
-CREATE SEQUENCE comment1_comment_id_seq INCREMENT 1 MINVALUE 1 MAXVALUE 2147483647 START 1 CACHE 1;
-
-CREATE TABLE "public"."comment" (
-    "user_id" integer NOT NULL,
-    "phone_id" integer NOT NULL,
-    "created" timestamp DEFAULT now() NOT NULL,
-    "comment" character varying NOT NULL,
-    "comment_id" integer DEFAULT nextval('comment1_comment_id_seq') NOT NULL,
-    CONSTRAINT "comment_phone_id_fkey" FOREIGN KEY (phone_id) REFERENCES phone(pid) NOT DEFERRABLE,
-    CONSTRAINT "comment_user_id_fkey" FOREIGN KEY (user_id) REFERENCES "user"(id) NOT DEFERRABLE
-) WITH (oids = false);
-
-INSERT INTO "comment" ("user_id", "phone_id", "created", "comment", "comment_id") VALUES
-(4,	11,	'2018-07-08 21:07:43.511728',	'asdasda',	2),
-(4,	4,	'2018-07-08 21:18:08.811483',	'Godsa',	3),
-(4,	26,	'2018-07-08 21:26:53.384385',	'Pixel XL is great!',	4),
-(4,	37,	'2018-07-08 21:27:14.601511',	'Oneplus best in class!',	5),
-(4,	29,	'2018-07-08 21:27:29.04001',	'LG!',	6),
-(4,	22,	'2018-07-08 21:27:43.48017',	'HTC',	7),
-(4,	37,	'2018-07-08 21:39:56.303986',	'fasd',	8),
-(4,	37,	'2018-07-08 21:48:36.232003',	'third comment!',	9),
-(4,	37,	'2018-07-08 21:48:45.63598',	' fourth one!
-',	10),
-(4,	37,	'2018-07-08 21:48:57.072704',	' fifth one!',	11);
-
-DROP VIEW IF EXISTS "complete_view";
-CREATE TABLE "complete_view" ("id" integer, "username" character varying, "comment" character varying, "phone_id" integer, "created" timestamp);
-
+--\connect "Mobowiki";
 
 DROP TABLE IF EXISTS "phone";
 DROP SEQUENCE IF EXISTS phone_pid_seq;
@@ -89,7 +58,7 @@ INSERT INTO "phone" ("pid", "phone_name", "brand") VALUES
 
 DROP TABLE IF EXISTS "user";
 DROP SEQUENCE IF EXISTS user_id_seq;
-CREATE SEQUENCE user_id_seq INCREMENT 1 MINVALUE 1 MAXVALUE 2147483647 START 1 CACHE 1;
+CREATE SEQUENCE user_id_seq INCREMENT 1 MINVALUE 1 MAXVALUE 2147483647 START 4 CACHE 1;
 
 CREATE TABLE "public"."user" (
     "id" integer DEFAULT nextval('user_id_seq') NOT NULL,
@@ -100,6 +69,36 @@ CREATE TABLE "public"."user" (
 
 INSERT INTO "user" ("id", "username", "password") VALUES
 (4,	'venky',	'2b62ff37392387551c20c959f6c8f148');
+
+DROP TABLE IF EXISTS "comment";
+DROP SEQUENCE IF EXISTS comment1_comment_id_seq;
+CREATE SEQUENCE comment1_comment_id_seq INCREMENT 1 MINVALUE 1 MAXVALUE 2147483647 START 11 CACHE 1;
+
+CREATE TABLE "public"."comment" (
+    "user_id" integer NOT NULL,
+    "phone_id" integer NOT NULL,
+    "created" timestamp DEFAULT now() NOT NULL,
+    "comment" character varying NOT NULL,
+    "comment_id" integer DEFAULT nextval('comment1_comment_id_seq') NOT NULL,
+    CONSTRAINT "comment_phone_id_fkey" FOREIGN KEY (phone_id) REFERENCES phone(pid) NOT DEFERRABLE,
+    CONSTRAINT "comment_user_id_fkey" FOREIGN KEY (user_id) REFERENCES "user"(id) NOT DEFERRABLE
+) WITH (oids = false);
+
+INSERT INTO "comment" ("user_id", "phone_id", "created", "comment", "comment_id") VALUES
+(4,	11,	'2018-07-08 21:07:43.511728',	'asdasda',	2),
+(4,	4,	'2018-07-08 21:18:08.811483',	'Godsa',	3),
+(4,	26,	'2018-07-08 21:26:53.384385',	'Pixel XL is great!',	4),
+(4,	37,	'2018-07-08 21:27:14.601511',	'Oneplus best in class!',	5),
+(4,	29,	'2018-07-08 21:27:29.04001',	'LG!',	6),
+(4,	22,	'2018-07-08 21:27:43.48017',	'HTC',	7),
+(4,	37,	'2018-07-08 21:39:56.303986',	'fasd',	8),
+(4,	37,	'2018-07-08 21:48:36.232003',	'third comment!',	9),
+(4,	37,	'2018-07-08 21:48:45.63598',	' fourth one!
+',	10),
+(4,	37,	'2018-07-08 21:48:57.072704',	' fifth one!',	11);
+
+DROP VIEW IF EXISTS "complete_view";
+CREATE TABLE "complete_view" ("id" integer, "username" character varying, "comment" character varying, "phone_id" integer, "created" timestamp);
 
 DROP TABLE IF EXISTS "user_info";
 CREATE TABLE "public"."user_info" (
@@ -134,4 +133,4 @@ CREATE TABLE "public"."view_try" (
     "wishlist_id" integer
 ) WITH (oids = false);
 
--- 2018-07-08 21:55:14.609511+05:30
+-- 2018-07-08 21:59:21.903379+05:30

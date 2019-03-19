@@ -10,10 +10,14 @@ var md5 = require('md5');
 var session = require('express-session');
 
 var config = {
-    user: 'Mobowiki',
+    // user: 'Mobowiki',
+    // database: 'Mobowiki',
+    // host: 'mobowiki.cvn4jmb3rmul.us-east-1.rds.amazonaws.com',
+    // password: 'Mobowiki'
+    user: 'postgres',
     database: 'Mobowiki',
-    host: 'mobowiki.cvn4jmb3rmul.us-east-1.rds.amazonaws.com',
-    password: 'Mobowiki'
+    host: 'localhost',
+    password: 'abcd@123456'
 };
 
 var app = express();
